@@ -67,6 +67,12 @@ else
   let s:visual          = s:light_blue
 endif
 
+let s:head_a         = s:dark_blue
+let s:head_b         = s:blue
+let s:head_c         = s:dark_cyan
+
+let s:code_bg        = s:bg_subtle
+
 " https://github.com/noahfrederick/vim-hemisu/
 function! s:h(group, style)
   execute "highlight" a:group
@@ -188,6 +194,90 @@ call s:h("htmlH3",        {"bg": s:bg, "fg": s:norm})
 call s:h("htmlH4",        {"bg": s:bg, "fg": s:norm})
 call s:h("htmlH5",        {"bg": s:bg, "fg": s:norm})
 call s:h("htmlH6",        {"bg": s:bg, "fg": s:norm})
+"
+" HTML syntax
+hi! link htmlTag          Special
+hi! link htmlEndTag       htmlTag
+
+hi! link htmlTagName      KeyWord
+" html5 tags show up as htmlTagN
+hi! link htmlTagN         Keyword
+
+" HTML content
+call s:h("htmlH1",        {"fg": s:head_a, "gui": "bold,italic", "cterm": "bold"     })
+call s:h("htmlH2",        {"fg": s:head_a, "gui": "bold"       , "cterm": "bold"     })
+call s:h("htmlH3",        {"fg": s:head_b, "gui": "italic"     , "cterm": "italic"   })
+call s:h("htmlH4",        {"fg": s:head_b, "gui": "italic"     , "cterm": "italic"   })
+call s:h("htmlH5",        {"fg": s:head_c                                            })
+call s:h("htmlH6",        {"fg": s:head_c                                            })
+call s:h("htmlLink",      {"fg": s:blue  , "gui": "underline"  , "cterm": "underline"})
+call s:h("htmlItalic",    {                "gui": "italic"     , "cterm": "italic"   })
+call s:h("htmlBold",      {                "gui": "bold"       , "cterm": "bold"     })
+call s:h("htmlBoldItalic",{                "gui": "bold,italic", "cterm": "bold"     })
+" hi htmlString     guifg=#87875f guibg=NONE gui=NONE        ctermfg=101 ctermbg=NONE cterm=NONE
+
+" tpope/vim-markdown
+call s:h("markdownBlockquote",          {"fg": s:norm})
+call s:h("markdownBold",                {"fg": s:norm  , "gui": "bold"       , "cterm": "bold"  })
+call s:h("markdownBoldItalic",          {"fg": s:norm  , "gui": "bold,italic", "cterm": "bold"  })
+call s:h("markdownEscape",              {"fg": s:norm})
+call s:h("markdownH1",                  {"fg": s:head_a, "gui": "bold,italic", "cterm": "bold"  })
+call s:h("markdownH2",                  {"fg": s:head_a, "gui": "bold"       , "cterm": "bold"  })
+call s:h("markdownH3",                  {"fg": s:head_a, "gui": "italic"     , "cterm": "italic"})
+call s:h("markdownH4",                  {"fg": s:head_a, "gui": "italic"     , "cterm": "italic"})
+call s:h("markdownH5",                  {"fg": s:head_a})
+call s:h("markdownH6",                  {"fg": s:head_a})
+call s:h("markdownHeadingDelimiter",    {"fg": s:norm})
+call s:h("markdownHeadingRule",         {"fg": s:norm})
+call s:h("markdownId",                  {"fg": s:medium_gray})
+call s:h("markdownIdDeclaration",       {"fg": s:norm_subtle})
+call s:h("markdownItalic",              {"fg": s:norm  , "gui": "italic"     , "cterm": "italic"})
+call s:h("markdownLinkDelimiter",       {"fg": s:medium_gray})
+call s:h("markdownLinkText",            {"fg": s:norm})
+call s:h("markdownLinkTextDelimiter",   {"fg": s:medium_gray})
+call s:h("markdownListMarker",          {"fg": s:norm})
+call s:h("markdownOrderedListMarker",   {"fg": s:norm})
+call s:h("markdownRule",                {"fg": s:norm})
+call s:h("markdownUrl",                 {"fg": s:medium_gray, "gui": "underline", "cterm": "underline"})
+call s:h("markdownUrlDelimiter",        {"fg": s:medium_gray})
+call s:h("markdownUrlTitle",            {"fg": s:norm})
+call s:h("markdownUrlTitleDelimiter",   {"fg": s:medium_gray})
+call s:h("markdownCode",                {"fg": s:norm, "bg": s:code_bg})
+call s:h("markdownCodeDelimiter",       {"fg": s:norm, "bg": s:code_bg})
+
+" plasticboy/vim-markdown
+call s:h("mkdBlockquote",               {"fg": s:norm})
+call s:h("mkdDelimiter",                {"fg": s:medium_gray})
+call s:h("mkdID",                       {"fg": s:medium_gray})
+call s:h("mkdLink",                     {"fg": s:norm})
+call s:h("mkdLinkDef",                  {"fg": s:medium_gray})
+call s:h("mkdListItem",                 {"fg": s:norm})
+call s:h("mkdNonListItemBlock",         {"fg": s:norm})  " bug in syntax?
+call s:h("mkdRule",                     {"fg": s:norm})
+call s:h("mkdURL",                      {"fg": s:medium_gray, "gui": "underline", "cterm": "underline"})
+call s:h("mkdCode",                     {"fg": s:norm, "bg": s:code_bg})
+
+" gabrielelana/vim-markdown
+call s:h("markdownBlockquoteDelimiter", {"fg": s:norm})
+call s:h("markdownInlineDelimiter",     {"fg": s:norm})
+call s:h("markdownItemDelimiter",       {"fg": s:norm})
+call s:h("markdownLinkReference",       {"fg": s:medium_gray})
+call s:h("markdownLinkText",            {"fg": s:norm})
+call s:h("markdownLinkTextContainer",   {"fg": s:medium_gray})
+call s:h("markdownLinkUrl",             {"fg": s:medium_gray, "gui": "underline", "cterm": "underline"})
+call s:h("markdownLinkUrlContainer",    {"fg": s:medium_gray})
+call s:h("markdownFencedCodeBlock",     {"fg": s:norm, "bg": s:code_bg})
+call s:h("markdownInlineCode",          {"fg": s:norm, "bg": s:code_bg})
+
+" mattly/vim-markdown-enhancements
+call s:h("mmdFootnoteDelimiter",        {"fg": s:medium_gray})
+call s:h("mmdFootnoteMarker",           {"fg": s:norm})
+call s:h("mmdTableAlign",               {"fg": s:norm})
+call s:h("mmdTableDelimiter",           {"fg": s:norm})
+call s:h("mmdTableHeadDelimiter",       {"fg": s:norm})
+call s:h("mmdTableHeader",              {"fg": s:norm})
+call s:h("mmdTableCaptionDelimiter",    {"fg": s:norm})
+call s:h("mmdTableCaption",             {"fg": s:norm})
 
 hi link diffRemoved       DiffDelete
 hi link diffAdded         DiffAdd
