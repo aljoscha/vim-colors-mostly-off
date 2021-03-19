@@ -90,19 +90,16 @@ call s:h("Cursor",        {"bg": s:blue, "fg": s:norm })
 call s:h("Comment",       {"fg": s:bg_subtle, "gui": "italic"})
 
 call s:h("Constant",      {"fg": s:norm_subtle})
-" hi! link Constant         Normal
 hi! link Character        Constant
 hi! link Number           Constant
 hi! link Boolean          Constant
 hi! link Float            Constant
 hi! link String           Constant
 
-"call s:h("Identifier",    {"fg": s:dark_blue})
-hi! link Identifier       Normal
+call s:h("Identifier",    {"fg": s:norm})
 hi! link Function         Identifier
 
-"call s:h("Statement",     {"fg": s:green})
-hi! link Statement        Normal
+call s:h("Statement",    {"fg": s:norm})
 hi! link Conditonal       Statement
 hi! link Repeat           Statement
 hi! link Label            Statement
@@ -110,21 +107,18 @@ hi! link Operator         Statement
 hi! link Keyword          Statement
 hi! link Exception        Statement
 
-"call s:h("PreProc",       {"fg": s:red})
-hi! link PreProc          Normal
+call s:h("PreProc",       {"fg": s:norm})
 hi! link Include          PreProc
 hi! link Define           PreProc
 hi! link Macro            PreProc
 hi! link PreCondit        PreProc
 
-"call s:h("Type",          {"fg": s:purple})
-hi! link Type             Normal
+call s:h("Type",          {"fg": s:norm})
 hi! link StorageClass     Type
 hi! link Structure        Type
 hi! link Typedef          Type
 
-"call s:h("Special",       {"fg": s:pink})
-hi! link Special          Normal
+call s:h("Special",       {"fg": s:norm})
 hi! link SpecialChar      Special
 hi! link Tag              Special
 hi! link Delimiter        Special
