@@ -1,6 +1,6 @@
-" Name:       off.vim
+" Name:       mostly-off.vim
 " Version:    0.1
-" Maintainer: github.com/pbrisbin
+" Maintainer: github.com/aljoscha
 " License:    The MIT License (MIT)
 "
 " A colorscheme meant to look like a more pleasant version of syntax off.
@@ -15,7 +15,7 @@ if exists('syntax on')
     syntax reset
 endif
 
-let g:colors_name='off'
+let g:colors_name='mostly-off'
 
 let s:black           = { "gui": "#262626", "cterm": "0"   }
 let s:medium_gray     = { "gui": "#767676", "cterm": "243" }
