@@ -43,6 +43,16 @@ let s:light_purple    = { "gui": "#6855DE", "cterm": "13"  }
 let s:yellow          = { "gui": "#F3E430", "cterm": "11"  }
 let s:dark_yellow     = { "gui": "#A89C14", "cterm": "3"   }
 
+let s:diff_info_fg    = { "gui": "#3c71be", "cterm": "15" }
+let s:diff_info_bg0   = { "gui": "#b0ceff", "cterm": "153" }
+let s:diff_info_bg1   = { "gui": "#E6F3FE", "cterm": "153" }
+
+let s:diff_add_fg     = { "gui": "#1cad3c", "cterm": "10" }
+let s:diff_add_bg     = { "gui": "#cdffd8", "cterm": "10" }
+
+let s:diff_remove_fg  = { "gui": "#c03545", "cterm": "15" }
+let s:diff_remove_bg  = { "gui": "#ffdce0", "cterm": "15" }
+
 if &background == "dark"
   let s:bg              = s:black
   let s:bg_subtle       = s:light_black
@@ -150,11 +160,20 @@ call s:h("WarningMsg",    {"fg": s:red})
 call s:h("WildMenu",      {"fg": s:bg, "bg": s:norm})
 call s:h("Folded",        {"fg": s:medium_gray})
 call s:h("FoldColumn",    {"fg": s:bg_subtle})
-call s:h("DiffAdd",       {"fg": s:green})
-call s:h("DiffDelete",    {"fg": s:red})
-call s:h("DiffChange",    {"fg": s:dark_yellow})
-call s:h("DiffText",      {"fg": s:dark_blue})
 call s:h("SignColumn",    {"fg": s:light_green})
+
+call s:h("DiffAdd",       {"bg": s:diff_add_bg, "fg": s:norm})
+call s:h("DiffDelete",    {"bg": s:diff_remove_bg, "fg": s:norm})
+call s:h("DiffChange",    {"bg": s:diff_info_bg1, "fg": s:norm})
+call s:h("DiffText",      {"bg": s:diff_info_bg0, "fg": s:norm})
+
+call s:h("DiffAdded",     {"bg": s:diff_add_bg, "fg": s:norm})
+call s:h("DiffModified",  {"bg": s:diff_info_bg1, "fg": s:norm})
+call s:h("DiffRemoved",   {"bg": s:diff_remove_bg, "fg": s:norm})
+
+call s:h("DiffAddedGutter",     {"bg": s:diff_add_bg, "fg": s:diff_add_fg})
+call s:h("DiffModifiedGutter",  {"bg": s:diff_info_bg0, "fg": s:diff_info_fg})
+call s:h("DiffRemovedGutter",   {"bg": s:diff_remove_bg, "fg": s:diff_remove_fg})
 
 if has("gui_running")
   call s:h("SpellBad",    {"gui": "underline", "sp": s:red})
