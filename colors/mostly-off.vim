@@ -70,7 +70,7 @@ else
   let s:bg_very_subtle  = s:lighter_gray
   let s:norm            = s:black
   let s:norm_subtle     = s:lighter_black
-  let s:purple          = s:dark_purple
+  let s:purple          = s:light_purple
   let s:cyan            = s:dark_cyan
   let s:green           = s:dark_green
   let s:red             = s:dark_red
@@ -198,7 +198,7 @@ call s:h("CursorColumn",  {"bg": s:bg_very_subtle})
 call s:h("CursorLine",    {"fg": s:norm, "bg": s:bg_very_subtle})
 call s:h("ColorColumn",   {"bg": s:bg_subtle})
 
-call s:h("MatchParen",    {"bg": s:dark_blue, "fg": s:norm})
+call s:h("MatchParen",    {"bg": s:purple, "fg": s:bg})
 call s:h("qfLineNr",      {"fg": s:medium_gray})
 
 call s:h("htmlH1",        {"bg": s:bg, "fg": s:norm})
