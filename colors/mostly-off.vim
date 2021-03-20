@@ -76,6 +76,10 @@ if &background == "dark"
 
   let s:diff_remove_fg  = s:norm
   let s:diff_remove_bg  = s:darker_red
+
+  let s:lsp_reference_read  = s:darker_green
+  let s:lsp_reference_write = s:darker_red
+  let s:lsp_reference_text  = s:darker_blue
 else
   let s:bg              = s:actual_white
   let s:bg_subtle       = s:light_gray
@@ -97,6 +101,10 @@ else
 
   let s:diff_remove_fg  = s:dark_red
   let s:diff_remove_bg  = s:light_red
+
+  let s:lsp_reference_read  = s:light_green
+  let s:lsp_reference_write = s:light_red
+  let s:lsp_reference_text  = s:light_blue
 endif
 
 let s:head_a         = s:dark_blue
@@ -222,6 +230,10 @@ call s:h("ColorColumn",   {"bg": s:bg_subtle})
 
 call s:h("MatchParen",    {"bg": s:purple, "fg": s:bg})
 call s:h("qfLineNr",      {"fg": s:medium_gray})
+
+call s:h("LspReferenceRead", {"bg": s:lsp_reference_read})
+call s:h("LspReferenceWrite", {"bg": s:lsp_reference_write})
+call s:h("LspReferenceText", {"bg": s:lsp_reference_text})
 
 call s:h("htmlH1",        {"bg": s:bg, "fg": s:norm})
 call s:h("htmlH2",        {"bg": s:bg, "fg": s:norm})
