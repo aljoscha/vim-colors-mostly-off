@@ -28,7 +28,7 @@ let s:light_gray      = { "gui": "#B2B2B2", "cterm": "249" }
 let s:lighter_gray    = { "gui": "#EEEEEE", "cterm": "251" }
 let s:pink            = { "gui": "#fb007a", "cterm": "9"   }
 let s:dark_red        = { "gui": "#c03545", "cterm": "1"   }
-let s:light_red       = { "gui": "#ffdce0", "cterm": "1"   }
+let s:light_red       = { "gui": "#ffeef0", "cterm": "1"   }
 let s:orange          = { "gui": "#ffa500", "cterm": "167" }
 let s:darker_blue     = { "gui": "#005F87", "cterm": "18"  }
 let s:dark_blue       = { "gui": "#3c71be", "cterm": "4"   }
@@ -36,22 +36,22 @@ let s:blue            = { "gui": "#b0ceff", "cterm": "12"  }
 let s:light_blue      = { "gui": "#E6F3FE", "cterm": "153" }
 let s:dark_cyan       = { "gui": "#20A5BA", "cterm": "6"   }
 let s:light_cyan      = { "gui": "#4FB8CC", "cterm": "14"  }
-let s:dark_green      = { "gui": "#10A778", "cterm": "2"   }
-let s:light_green     = { "gui": "#5FD7A7", "cterm": "10"  }
+let s:dark_green      = { "gui": "#1cad4c", "cterm": "2"   }
+let s:light_green     = { "gui": "#e6ffed", "cterm": "10"  }
 let s:dark_purple     = { "gui": "#523C79", "cterm": "5"   }
 let s:light_purple    = { "gui": "#6855DE", "cterm": "13"  }
 let s:yellow          = { "gui": "#F3E430", "cterm": "11"  }
 let s:dark_yellow     = { "gui": "#A89C14", "cterm": "3"   }
 
-let s:diff_info_fg    = { "gui": "#3c71be", "cterm": "15" }
-let s:diff_info_bg0   = { "gui": "#b0ceff", "cterm": "153" }
-let s:diff_info_bg1   = { "gui": "#E6F3FE", "cterm": "153" }
+let s:diff_info_fg    = s:dark_blue
+let s:diff_info_bg0   = s:blue
+let s:diff_info_bg1   = s:light_blue
 
-let s:diff_add_fg     = { "gui": "#1cad3c", "cterm": "10" }
-let s:diff_add_bg     = { "gui": "#cdffd8", "cterm": "10" }
+let s:diff_add_fg     = s:dark_green
+let s:diff_add_bg     = s:light_green
 
-let s:diff_remove_fg  = { "gui": "#c03545", "cterm": "15" }
-let s:diff_remove_bg  = { "gui": "#ffdce0", "cterm": "15" }
+let s:diff_remove_fg  = s:dark_red
+let s:diff_remove_bg  = s:light_red
 
 if &background == "dark"
   let s:bg              = s:black
