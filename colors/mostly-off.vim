@@ -80,6 +80,8 @@ if &background == "dark"
   let s:lsp_reference_read  = s:darker_green
   let s:lsp_reference_write = s:darker_red
   let s:lsp_reference_text  = s:darker_blue
+
+  let s:code_bg        = s:light_black
 else
   let s:bg              = s:actual_white
   let s:bg_subtle       = s:light_gray
@@ -105,13 +107,13 @@ else
   let s:lsp_reference_read  = s:light_green
   let s:lsp_reference_write = s:light_red
   let s:lsp_reference_text  = s:light_blue
+
+  let s:code_bg        = s:white
 endif
 
 let s:head_a         = s:dark_blue
 let s:head_b         = s:blue
 let s:head_c         = s:dark_cyan
-
-let s:code_bg        = s:bg_subtle
 
 " https://github.com/noahfrederick/vim-hemisu/
 function! s:h(group, style)
