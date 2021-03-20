@@ -27,15 +27,17 @@ let s:subtle_black    = { "gui": "#303030", "cterm": "236" }
 let s:light_gray      = { "gui": "#B2B2B2", "cterm": "249" }
 let s:lighter_gray    = { "gui": "#EEEEEE", "cterm": "251" }
 let s:pink            = { "gui": "#fb007a", "cterm": "9"   }
+let s:darker_red      = { "gui": "#542328", "cterm": "1"   }
 let s:dark_red        = { "gui": "#c03545", "cterm": "1"   }
 let s:light_red       = { "gui": "#ffeef0", "cterm": "1"   }
 let s:orange          = { "gui": "#ffa500", "cterm": "167" }
-let s:darker_blue     = { "gui": "#005F87", "cterm": "18"  }
+let s:darker_blue     = { "gui": "#2b4d80", "cterm": "18"  }
 let s:dark_blue       = { "gui": "#3c71be", "cterm": "4"   }
 let s:blue            = { "gui": "#b0ceff", "cterm": "12"  }
 let s:light_blue      = { "gui": "#E6F3FE", "cterm": "153" }
 let s:dark_cyan       = { "gui": "#20A5BA", "cterm": "6"   }
 let s:light_cyan      = { "gui": "#4FB8CC", "cterm": "14"  }
+let s:darker_green    = { "gui": "#1f4f34", "cterm": "2"   }
 let s:dark_green      = { "gui": "#1cad4c", "cterm": "2"   }
 let s:light_green     = { "gui": "#e6ffed", "cterm": "10"  }
 let s:dark_purple     = { "gui": "#523C79", "cterm": "5"   }
@@ -64,6 +66,16 @@ if &background == "dark"
   let s:green           = s:light_green
   let s:red             = s:light_red
   let s:visual          = s:lighter_black
+
+  let s:diff_info_fg    = s:norm
+  let s:diff_info_bg0   = s:dark_blue
+  let s:diff_info_bg1   = s:darker_blue
+
+  let s:diff_add_fg     = s:norm
+  let s:diff_add_bg     = s:darker_green
+
+  let s:diff_remove_fg  = s:norm
+  let s:diff_remove_bg  = s:darker_red
 else
   let s:bg              = s:actual_white
   let s:bg_subtle       = s:light_gray
@@ -75,6 +87,16 @@ else
   let s:green           = s:dark_green
   let s:red             = s:dark_red
   let s:visual          = s:light_blue
+
+  let s:diff_info_fg    = s:dark_blue
+  let s:diff_info_bg0   = s:blue
+  let s:diff_info_bg1   = s:light_blue
+
+  let s:diff_add_fg     = s:dark_green
+  let s:diff_add_bg     = s:light_green
+
+  let s:diff_remove_fg  = s:dark_red
+  let s:diff_remove_bg  = s:light_red
 endif
 
 let s:head_a         = s:dark_blue
