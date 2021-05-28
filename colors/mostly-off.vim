@@ -130,6 +130,7 @@ endfunction
 call s:h("Normal",        {"bg": s:bg, "fg": s:norm})
 call s:h("Cursor",        {"bg": s:blue, "fg": s:norm })
 call s:h("Comment",       {"fg": s:bg_subtle, "gui": "italic"})
+hi! link SpecialComment   Comment
 
 call s:h("Constant",      {"fg": s:norm_subtle})
 hi! link Character        Constant
@@ -164,7 +165,6 @@ call s:h("Special",       {"fg": s:norm})
 hi! link SpecialChar      Special
 hi! link Tag              Special
 hi! link Delimiter        Special
-hi! link SpecialComment   Special
 hi! link Debug            Special
 
 call s:h("Underlined",    {"fg": s:norm, "gui": "underline", "cterm": "underline"})
