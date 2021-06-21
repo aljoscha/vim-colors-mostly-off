@@ -230,7 +230,7 @@ call s:h("CursorColumn",  {"bg": s:bg_very_subtle})
 call s:h("CursorLine",    {"fg": s:norm, "bg": s:bg_very_subtle})
 call s:h("ColorColumn",   {"bg": s:bg_very_subtle})
 
-call s:h("MatchParen",    {"bg": s:purple, "fg": s:bg})
+call s:h("MatchParen",    {"bg": s:blue, "fg": s:bg})
 call s:h("qfLineNr",      {"fg": s:medium_gray})
 
 call s:h("LspReferenceRead", {"bg": s:lsp_reference_read})
