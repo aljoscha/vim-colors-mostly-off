@@ -203,10 +203,6 @@ call s:h("DiffAdded",     {"bg": s:diff_add_bg, "fg": s:norm})
 call s:h("DiffModified",  {"bg": s:diff_info_bg1, "fg": s:norm})
 call s:h("DiffRemoved",   {"bg": s:diff_remove_bg, "fg": s:norm})
 
-call s:h("DiffAddedGutter",     {"bg": s:diff_add_bg, "fg": s:diff_add_fg})
-call s:h("DiffModifiedGutter",  {"bg": s:diff_info_bg0, "fg": s:diff_info_fg})
-call s:h("DiffRemovedGutter",   {"bg": s:diff_remove_bg, "fg": s:diff_remove_fg})
-
 if has("gui_running")
   call s:h("SpellBad",    {"gui": "underline", "sp": s:red})
   call s:h("SpellCap",    {"gui": "underline", "sp": s:light_green})
@@ -335,7 +331,9 @@ hi link diffAdded         DiffAdd
 hi link SignifySignAdd              LineNr
 hi link SignifySignDelete           LineNr
 hi link SignifySignChange           LineNr
-hi link GitGutterAdd                LineNr
-hi link GitGutterDelete             LineNr
-hi link GitGutterChange             LineNr
-hi link GitGutterChangeDelete       LineNr
+
+call s:h("GitGutterAdd",           {"bg": s:diff_add_bg, "fg": s:diff_add_fg})
+call s:h("GitGutterChange",        {"bg": s:diff_info_bg0, "fg": s:diff_info_fg})
+call s:h("GitGutterDelete",        {"bg": s:diff_remove_bg, "fg": s:diff_remove_fg})
+call s:h("GitGutterChangeDelete",  {"bg": s:diff_info_bg0, "fg": s:diff_info_fg})
+
